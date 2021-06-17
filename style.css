@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.risovalka {
+  display: flex;
+  padding: 25px;
+}
+.kvadrat {
+  width: 300px;
+  height: 300px;
+  border: 2px solid red;
+  position: relative;
+  overflow: hidden;
+}
+.colors {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.red {
+  width: 50px;
+  height: 50px;
+  background: red;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.green {
+  width: 50px;
+  height: 50px;
+  background: green;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.black {
+  width: 50px;
+  height: 50px;
+  background: black;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.yellow {
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.razmer{
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+text-align: center;
+
+}
+#r1{
+  width: 10px;
+  height: 10px;
+  background: #868585;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: auto;
+}
+#r2{
+  width: 15px;
+  height: 15px;
+  background: #868585;
+  border: 1px solid black;
+  border-radius: 50%;margin: auto;
+}
+#r3{
+  width: 25px;
+  height: 25px;
+  background: #868585;
+  border: 1px solid black;
+  border-radius: 50%;margin: auto;
+}
+#r4{
+  width: 35px;
+  height: 35px;
+  background: #868585;
+  border: 1px solid black;
+  border-radius: 50%;margin: auto;
+}
+#r5{
+  width: 40px;
+  height: 40px;
+  background: #868585;
+  border: 1px solid black;
+  border-radius: 50%;margin: auto;
+}#r6{
+  width: 50px;
+  height: 50px;
+  background: #868585;
+  border: 1px solid black;
+  border-radius: 50%;margin: auto;
+}
+
+
+.name {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid red;
+  background: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+  content: "";
+}

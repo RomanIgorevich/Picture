@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="risovalka">
+        <div class="razmer" v-on:click="razmerKisti">
+          <div>
+            Размер <br />
+            кисти
+          </div>
+          <div id="r1"></div>
+          <div id="r2"></div>
+          <div id="r3"></div>
+          <div id="r4"></div>
+          <div id="r5"></div>
+          <div id="r6"></div>
+        </div>
+        <div class="kvadrat" v-on:mousemove="reg"></div>
+        <div class="colors" v-on:click="vuborCveta">
+          <div>Цвет</div>
+          <div class="red"></div>
+          <div class="green"></div>
+          <div class="black"></div>
+          <div class="yellow"></div>
+        </div>
+      </div>
+      <div>
+        <p>X = {{x}}, Y = {{y}}</p>
+        <p>Нажатие кнопки - {{z}}</p>
+        <p>Размер пера - {{r}}px</p>
+        <p>Выбраныи цвет - {{c}}</p>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          x: null,
+          y: null,
+          z: null,
+          r: 10,
+          c: "red",
+        },
+        methods: {
+          razmerKisti: function (event) {
+            switch (event.target.id) {
+              case "r1":
+                this.r = 10;
+                break;
+              case "r2":
+                this.r = 15;
+                break;
+              case "r3":
+                this.r = 25;
+                break;
+              case "r4":
+                this.r = 35;
+                break;
+              case "r5":
+                this.r = 40;
+                break;
+              case "r6":
+                this.r = 50;
+                break;
+              default:
+                this.r = 10;
+                break;
+            }
+          },
+          vuborCveta: function(event){
+            switch (event.target.className) {
+              case "red":
+                this.c = 'red';
+                break;
+                case "green":
+                this.c = 'green';
+                break;
+                case "black":
+                this.c = 'black';
+                break;
+                case "yellow":
+                this.c = 'yellow';
+                break;
+                default: this.c ='red'; break;
+            }
+          },
+          reg: function (event) {
+            // console.log(event);
+            this.x = event.clientX;
+            this.y = event.clientY;
+            this.z = event.buttons;
+
+            if (event.buttons == 1) {
+              let a = document.getElementsByClassName("kvadrat")[0];
+              let div = document.createElement("div");
+              div.className = "name";
+              div.style.top = (this.y - 27 -this.r/2) + "px";
+              div.style.left = (this.x - 130-this.r/2) + "px";
+              div.style.width = this.r+"px"
+              div.style.height = this.r+"px"
+              div.style.background = this.c
+              div.style.borderColor =this.c
+              a.appendChild(div);
+              console.log("kykyky");
+            }
+          },
+        },
+      });
+    </script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
